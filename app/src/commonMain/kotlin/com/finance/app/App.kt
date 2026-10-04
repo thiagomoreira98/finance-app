@@ -11,6 +11,7 @@ import com.finance.app.data.model.CreditCard
 import com.finance.app.ui.components.FloatingBottomNavBar
 import com.finance.app.ui.navigation.Screen
 import com.finance.app.ui.screens.CardsScreen
+import com.finance.app.ui.screens.TransactionsScreen
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -34,6 +35,15 @@ fun App() {
                             Text("Home Screen")
                         }
                     }
+                    Screen.TRANSACTIONS -> {
+                        TransactionsScreen(
+                            transactions = listOf(),
+                            availableCards = cards,
+                            onAddTransaction = {},
+                            onUpdateTransaction = {},
+                            onDeleteTransaction = {}
+                        )
+                    }
                     Screen.CARDS -> {
                         CardsScreen(
                             cards = cards,
@@ -45,11 +55,6 @@ fun App() {
                             }
                         )
                     }
-                    Screen.CREDIT_CARD -> {
-                        Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-                            Text("Compras Cartão Screen")
-                        }
-                    }
                     Screen.FIXED_COSTS -> {
                         Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
                             Text("Custos Fixos Screen")
@@ -58,11 +63,6 @@ fun App() {
                     Screen.INCOMES -> {
                         Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
                             Text("Rendas Screen")
-                        }
-                    }
-                    Screen.DAILY_SUMMARY -> {
-                        Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-                            Text("Resumo Diário Screen")
                         }
                     }
                 }

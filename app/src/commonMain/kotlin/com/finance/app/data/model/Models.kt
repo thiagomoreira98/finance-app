@@ -16,36 +16,33 @@ data class CreditCard(
 )
 
 @Serializable
-data class CreditCardItem(
+data class TransactionItem(
     val id: String = "",
-    val nome: String,
-    val data: String,
-    val valorTotal: Double,
-    val parcelas: Int,
-    val cartao: String
+    val name: String,
+    val date: String,
+    val totalAmount: Double,
+    val installments: Int,
+    val card: String
 )
 
 @Serializable
 data class FixedCostItem(
     val id: String = "",
-    val nome: String,
-    val valor: Double,
-    val diaVencimento: Int,
-    val categoria: String
+    val name: String,
+    val amount: Double
 )
 
 @Serializable
 data class IncomeItem(
     val id: String = "",
-    val origem: String,
-    val valor: Double,
-    val diaRecebimento: Int
+    val source: String,
+    val amount: Double
 )
 
 @Serializable
 data class FinancialSummary(
-    val totalRendas: Double,
-    val totalCustosFixos: Double,
-    val totalCartaoCreditoMes: Double,
-    val saldoProjetado: Double
+    val totalIncome: Double,
+    val totalFixedCosts: Double,
+    val totalMonthlyCreditCard: Double,
+    val projectedBalance: Double
 )

@@ -28,3 +28,6 @@ kotlin-js-store/
 # Apps Script deployment / credentials files
 clasp.json
 .clasp.json
+
+# KMP
+.kotlin/

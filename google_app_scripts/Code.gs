@@ -13,32 +13,35 @@ function doPost(e) {
 
     switch(action) {
       case "addCreditCard":
-        return respondJSON(addItem("Cartões", data.payload));
+        return respondJSON(addItem("CARTOES", data.payload));
       case "updateCreditCard":
-        return respondJSON(updateItem("Cartões", data.payload));
+        return respondJSON(updateItem("CARTOES", data.payload));
       case "deleteCreditCard":
-        return respondJSON(deleteItem("Cartões", data.payload.id));
+        return respondJSON(deleteItem("CARTOES", data.payload.id));
 
       case "addCreditCardItem":
-        return respondJSON(addItem("Cartão de Crédito", data.payload));
+      case "addLancamento":
+        return respondJSON(addItem("LANCAMENTOS", data.payload));
       case "updateCreditCardItem":
-        return respondJSON(updateItem("Cartão de Crédito", data.payload));
+      case "updateLancamento":
+        return respondJSON(updateItem("LANCAMENTOS", data.payload));
       case "deleteCreditCardItem":
-        return respondJSON(deleteItem("Cartão de Crédito", data.payload.id));
+      case "deleteLancamento":
+        return respondJSON(deleteItem("LANCAMENTOS", data.payload.id));
 
       case "addFixedCostItem":
-        return respondJSON(addItem("Custos Fixos", data.payload));
+        return respondJSON(addItem("CUSTOS_FIXOS", data.payload));
       case "updateFixedCostItem":
-        return respondJSON(updateItem("Custos Fixos", data.payload));
+        return respondJSON(updateItem("CUSTOS_FIXOS", data.payload));
       case "deleteFixedCostItem":
-        return respondJSON(deleteItem("Custos Fixos", data.payload.id));
+        return respondJSON(deleteItem("CUSTOS_FIXOS", data.payload.id));
 
       case "addIncomeItem":
-        return respondJSON(addItem("Rendas", data.payload));
+        return respondJSON(addItem("RENDAS", data.payload));
       case "updateIncomeItem":
-        return respondJSON(updateItem("Rendas", data.payload));
+        return respondJSON(updateItem("RENDAS", data.payload));
       case "deleteIncomeItem":
-        return respondJSON(deleteItem("Rendas", data.payload.id));
+        return respondJSON(deleteItem("RENDAS", data.payload.id));
 
       default:
         return respondJSON({ status: "error", message: "Ação inválida" });
@@ -53,10 +56,10 @@ function setupSheets() {
   
   // Create sheets if not present
   const sheets = [
-    { name: "Cartões", headers: ["id", "name", "lastFourDigits", "type"] },
-    { name: "Cartão de Crédito", headers: ["id", "nome", "data", "valorTotal", "parcelas", "cartao"] },
-    { name: "Custos Fixos", headers: ["id", "nome", "valor", "diaVencimento", "categoria"] },
-    { name: "Rendas", headers: ["id", "origem", "valor", "diaRecebimento"] }
+    { name: "CARTOES", headers: ["id", "name", "lastFourDigits", "type"] },
+    { name: "LANCAMENTOS", headers: ["id", "nome", "data", "valorTotal", "parcelas", "cartao"] },
+    { name: "CUSTOS_FIXOS", headers: ["id", "nome", "valor"] },
+    { name: "RENDAS", headers: ["id", "origem", "valor"] }
   ];
 
   sheets.forEach(s => {
@@ -70,10 +73,10 @@ function setupSheets() {
 
 function getAllData() {
   return {
-    cards: getSheetData("Cartões"),
-    creditCard: getSheetData("Cartão de Crédito"),
-    fixedCosts: getSheetData("Custos Fixos"),
-    incomes: getSheetData("Rendas")
+    cards: getSheetData("CARTOES"),
+    lancamentos: getSheetData("LANCAMENTOS"),
+    fixedCosts: getSheetData("CUSTOS_FIXOS"),
+    incomes: getSheetData("RENDAS")
   };
 }
 

@@ -38,12 +38,11 @@ fun FloatingBottomNavBar(
             horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.CenterVertically
         ) {
-            NavItem(Screen.HOME, Icons.Default.Home, currentScreen, onScreenSelected)
+            NavItem(Screen.HOME, Icons.Default.PieChart, currentScreen, onScreenSelected)
+            NavItem(Screen.TRANSACTIONS, Icons.Default.Receipt, currentScreen, onScreenSelected)
             NavItem(Screen.CARDS, Icons.Default.Style, currentScreen, onScreenSelected)
-            NavItem(Screen.CREDIT_CARD, Icons.Default.CreditCard, currentScreen, onScreenSelected)
             NavItem(Screen.FIXED_COSTS, Icons.Default.ReceiptLong, currentScreen, onScreenSelected)
             NavItem(Screen.INCOMES, Icons.Default.AttachMoney, currentScreen, onScreenSelected)
-            NavItem(Screen.DAILY_SUMMARY, Icons.Default.PieChart, currentScreen, onScreenSelected)
         }
     }
 }
