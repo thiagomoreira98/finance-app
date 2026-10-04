@@ -1,0 +1,30 @@
+# Gradle files
+.gradle/
+build/
+*/build/
+local.properties
+
+# IDE files
+.idea/
+*.iml
+.navigation/
+captures/
+.externalNativeBuild/
+.cxx/
+*.hprof
+
+# macOS files
+.DS_Store
+
+# Android Studio / Kotlin Multiplatform temporary files
+*.ap_
+*.dex
+*.class
+
+# Node / JS artifacts (if building for JS/Web target in Kotlin)
+node_modules/
+kotlin-js-store/
+
+# Apps Script deployment / credentials files
+clasp.json
+.clasp.json
