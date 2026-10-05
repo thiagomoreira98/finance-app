@@ -57,7 +57,7 @@ function setupSheets() {
   // Create sheets if not present
   const sheets = [
     { name: "CARTOES", headers: ["id", "name", "lastFourDigits", "type"] },
-    { name: "LANCAMENTOS", headers: ["id", "nome", "data", "valorTotal", "parcelas", "cartao"] },
+    { name: "LANCAMENTOS", headers: ["id", "nome", "data", "valorTotal", "valorParcela", "qtdParcelas", "parcelasRestantes", "cartao", "faltaPagar"] },
     { name: "CUSTOS_FIXOS", headers: ["id", "nome", "valor"] },
     { name: "RENDAS", headers: ["id", "origem", "valor"] }
   ];

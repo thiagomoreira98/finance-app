@@ -46,3 +46,12 @@ data class FinancialSummary(
     val totalMonthlyCreditCard: Double,
     val projectedBalance: Double
 )
+
+@Serializable
+data class AllDataResponse(
+    val cards: List<CreditCard> = emptyList(),
+    @kotlinx.serialization.SerialName("lancamentos")
+    val transactions: List<TransactionItem> = emptyList(),
+    val fixedCosts: List<FixedCostItem> = emptyList(),
+    val incomes: List<IncomeItem> = emptyList()
+)

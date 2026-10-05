@@ -12,5 +12,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "GestaoFinanceiraKMP"
+rootProject.name = "FinanceApp"
 include(":app")

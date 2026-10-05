@@ -5,6 +5,7 @@ build/
 local.properties
 
 # IDE files
+.vscode/
 .idea/
 *.iml
 .navigation/
